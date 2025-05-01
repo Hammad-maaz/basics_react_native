@@ -3,10 +3,13 @@ import LoginScreen from "../screens/components/login";
 import Home from "../screens/components/home";
 import FlatListScreen from "../screens/components/flat_list";
 import FetchDataScreen from "../screens/components/fetch_data";
-import Dashboard from "../screens/dashboard";
+import Dashboard from "../screens/components/dashboard";
 import AxiosDataFetching from "../screens/components/axios_data_fetching";
 import ThemeDemo from "../screens/components/theme_demo";
 import BasicAnimation from "../screens/animations/basic_animation";
+import Interpolates from "../screens/animations/interpolate";
+import AnimationDashoard from "../screens/animations/animation_dashboard";
+import AnimationRoutes from "./animation_routes";
 
 
 export type RootNavigationParamsList = {
@@ -17,7 +20,7 @@ export type RootNavigationParamsList = {
     home_screen: undefined,
     axios_data_fetching: undefined,
     theme_demo: undefined,
-    basic_animation: undefined
+    animation_route: undefined
 }
 const Stack = createStackNavigator<RootNavigationParamsList>();
 const RootNavigation: React.FC = () => {
@@ -30,7 +33,10 @@ const RootNavigation: React.FC = () => {
             <Stack.Screen name="home_screen" component={Home} />
             <Stack.Screen name="axios_data_fetching" component={AxiosDataFetching} />
             <Stack.Screen name="theme_demo" component={ThemeDemo} />
-            <Stack.Screen name="basic_animation" component={BasicAnimation} />
+            <Stack.Screen name="animation_route" component={AnimationRoutes} />
+            {/* <Stack.Screen name="basic_animation" component={BasicAnimation} />
+            <Stack.Screen name="interpolates" component={Interpolates} />
+            <Stack.Screen name="interpolates" component={Interpolates} /> */}
         </Stack.Navigator>
     )
 }

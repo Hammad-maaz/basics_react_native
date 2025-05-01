@@ -11,7 +11,7 @@ const BasicAnimation:React.FC = () => {
     const bounceAnim = useRef(new Animated.Value(1)).current;
 
 
-    const spin = rotateAnim.interpolate({
+    const rotate = rotateAnim.interpolate({
         inputRange: [0, 1],
         outputRange: ['0deg', '360deg']
     })
@@ -56,7 +56,7 @@ const BasicAnimation:React.FC = () => {
         ]).start()
     }
 
-    const rotate = () => {
+    const rotatebtn = () => {
         Animated.timing(rotateAnim, {
             toValue: 1,
             duration: 1000,
@@ -88,7 +88,7 @@ const BasicAnimation:React.FC = () => {
 
             Animated.timing(bounceAnim, {
                 toValue: 0,
-                duration: 100,
+                duration: 1000,
                 easing: Easing.bounce,
                 useNativeDriver: true
             }),
@@ -131,9 +131,9 @@ const BasicAnimation:React.FC = () => {
 
                 {/* ROTATE ANIMATION */}
             <View style={{width: "100%", alignItems: "center"}}>
-                <Animated.View style={[AnimationStyles.fade_anim_box, {transform: [{rotate: spin}], backgroundColor: "orange"}]} />
+                <Animated.View style={[AnimationStyles.fade_anim_box, {transform: [{rotate}], backgroundColor: "orange"}]} />
             </View>
-            <Button title= "Rotate" onPress={rotate}/>
+            <Button title= "Rotate" onPress={rotatebtn}/>
             <View style={{marginTop: 50}}/>
                 {/* END */}
 
